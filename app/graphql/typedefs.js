@@ -8,7 +8,7 @@ const typeDefs = gql`
 
   type Class {
     "This is a mongodb ID, this is a class in the school"
-    _id: id!
+    _id: ID!
     "The name of the class. Required"
     name: String!
     building: String!
