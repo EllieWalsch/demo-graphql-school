@@ -6,6 +6,15 @@ const typeDefs = gql`
     indexClasses: [Class]!
     indexSchools: [School!]!
     indexProfessors: [Professor!]!
+    "Get a class by its id"
+    class(_id: ID!): Class
+  }
+
+  type Mutation {
+    "Create a new school"
+    createSchool(name: String!, location: String!, studentCount: Int): School
+    "Update a class building"
+    updateClassBuilding(_id: ID!, newBuilding: String!): Class
   }
 
   type Class {
@@ -15,6 +24,7 @@ const typeDefs = gql`
     name: String!
     building: String!
     creditHours: Int!
+    professors: Professor
   }
 
   type School {
